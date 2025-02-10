@@ -43,9 +43,11 @@ function createTransactionContainer(id) {
     const container = createTransactionContainer(transaction.id)
     const title = createTransactionTitle(transaction.name)
     const amount = createTransactionAmount(transaction.amount)
+    const editBtn = createEditTransactionBtn(transaction)
+    const deleteBtn = createDeleteTransactionButton(transaction.id)
   
     document.querySelector('#transactions').append(container)
-    container.append(title, amount)
+    container.append(title, amount, editBtn, deleteBtn)
   }
 
 // Getting the data from the backend
