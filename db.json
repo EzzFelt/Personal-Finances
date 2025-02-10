@@ -1,9 +1,19 @@
 {
-    "transactions": [
-      {
-        "id": 1,
-        "name": "Freela",
-        "amount": 300
-      }
-    ]
-  }
+  "transactions": [
+    {
+      "name": "Freela",
+      "amount": 800,
+      "id": "1"
+    },
+    {
+      "name": "Sorteio",
+      "amount": 350,
+      "id": "a61a"
+    },
+    {
+      "name": "Conta de luz",
+      "amount": -250,
+      "id": "83aa"
+    }
+  ]
+}
