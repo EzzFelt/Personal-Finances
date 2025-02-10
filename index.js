@@ -73,8 +73,6 @@ function updateBalance() {
     transactions.forEach(renderTransaction)
     updateBalance()
   }
-  
-  document.addEventListener('DOMContentLoaded', setup)
 
 // This function saves the user transaction in the backend, using the method POST
   async function saveTransaction(ev) {
@@ -97,8 +95,19 @@ function updateBalance() {
     ev.target.reset()
     updateBalance()
   }
-  
-  // ...
+
+// This function creates an edit button for each transaction
+  function createEditTransactionBtn(transaction) {
+    const editBtn = document.createElement('button')
+    editBtn.classList.add('edit-btn')
+    editBtn.textContent = 'Editar'
+    editBtn.addEventListener('click', () => {
+      document.querySelector('#id').value = transaction.id
+      document.querySelector('#name').value = transaction.name
+      document.querySelector('#amount').value = transaction.amount
+    })
+    return editBtn
+  }
   
   document.addEventListener('DOMContentLoaded', setup)
   document.querySelector('form').addEventListener('submit', saveTransaction)
