@@ -124,6 +124,21 @@ function updateBalance() {
     })
     return editBtn
   }
+
+  // Creating an delete button for each transaction, using the method DELETE
+  function createDeleteTransactionButton(id) {
+    const deleteBtn = document.createElement('button')
+    deleteBtn.classList.add('delete-btn')
+    deleteBtn.textContent = 'Excluir'
+    deleteBtn.addEventListener('click', async () => {
+      await fetch(`http://localhost:3000/transactions/${id}`, { method: 'DELETE' })
+      deleteBtn.parentElement.remove()
+      const indexToRemove = transactions.findIndex((t) => t.id === id)
+      transactions.splice(indexToRemove, 1)
+      updateBalance()
+    })
+    return deleteBtn
+  }
   
   document.addEventListener('DOMContentLoaded', setup)
   document.querySelector('form').addEventListener('submit', saveTransaction)
