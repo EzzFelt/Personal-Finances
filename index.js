@@ -65,3 +65,13 @@ function updateBalance() {
     })
     balanceSpan.textContent = formater.format(balance)
   }
+
+// This function is called as soon as the page is loaded, rendering the transactions and getting the data from backend
+  async function setup() {
+    const results = await fetchTransactions()
+    transactions.push(...results)
+    transactions.forEach(renderTransaction)
+    updateBalance()
+  }
+  
+  document.addEventListener('DOMContentLoaded', setup)
