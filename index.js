@@ -96,6 +96,7 @@ function updateBalance() {
         const indexToRemove = transactions.findIndex((t) => t.id === id)
         transactions.splice(indexToRemove, 1, transaction)
         document.querySelector(`#transaction-${id}`).remove()
+        updateBalance()
         renderTransaction(transaction)
       } else {
     const response = await fetch('http://localhost:3000/transactions', {
