@@ -1,0 +1,9 @@
+{
+    "transactions": [
+      {
+        "id": 1,
+        "name": "Freela",
+        "amount": 300
+      }
+    ]
+  }
